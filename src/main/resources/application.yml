@@ -1,0 +1,18 @@
+---
+micronaut:
+    application:
+        name: micronaut-cassandra-tc-ms
+    server:
+        port: 8086
+
+---
+cassandra:
+    default:
+        clusterName: "myCluster"
+        contactPoint: "localhost"
+        port: 9042
+        maxSchemaAgreementWaitSeconds: 20
+        ssl: true
+
+---
+message.info: Exito
