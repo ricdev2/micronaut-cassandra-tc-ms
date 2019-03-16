@@ -8,11 +8,8 @@ micronaut:
 ---
 cassandra:
     default:
-        clusterName: "myCluster"
+        clusterName: "stores_ny_keyspace"
         contactPoint: "localhost"
         port: 9042
-        maxSchemaAgreementWaitSeconds: 20
-        ssl: true
-
----
-message.info: Exito
+        maxSchemaAgreementWaitSeconds: 70
+        ssl: false
