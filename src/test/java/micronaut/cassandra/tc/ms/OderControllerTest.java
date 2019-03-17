@@ -16,7 +16,7 @@ import org.testcontainers.containers.CassandraContainer;
  * Test class.
  * @version 1.0.0
  * @since 1.0.0
- * @author Rich Lopez 
+ * @author Ricardo Lopez
  */
 public class OderControllerTest {
 

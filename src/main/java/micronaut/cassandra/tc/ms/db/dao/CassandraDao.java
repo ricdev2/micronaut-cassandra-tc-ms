@@ -25,10 +25,4 @@ public interface CassandraDao<T, U> {
      */
     List<T> findAll();
 
-    /**
-     * Find a record by Id.
-     * @param identifier The partition key.
-     * @return A record founded.
-     */
-    T findById(U identifier);
 }

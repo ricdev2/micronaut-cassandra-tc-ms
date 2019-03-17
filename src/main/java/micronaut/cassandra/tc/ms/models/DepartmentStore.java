@@ -72,6 +72,22 @@ public class DepartmentStore {
         /** The longitude.*/
         private Double longitude;
 
+        /** The address name.*/
+        private String address;
+
+        /**
+         * Constructor.
+         * @param latitudeParam  The latitudeParam.
+         * @param longitudeParam The longitudeParam.
+         */
+        public Location(final Double latitudeParam,
+                        final Double longitudeParam,
+                        final String addressParam) {
+            this.latitude = latitudeParam;
+            this.longitude = longitudeParam;
+            this.address = addressParam;
+        }
+
         /**
          * Gets the latitude.
          *
@@ -108,6 +124,23 @@ public class DepartmentStore {
             this.longitude = longitudeParam;
         }
 
+        /**
+         * Gets the address.
+         *
+         * @return the value address.
+         */
+        public String getAddress() {
+            return address;
+        }
+
+        /**
+         * Sets the address.
+         *
+         * @param address value.
+         */
+        public void setAddress(final String address) {
+            this.address = address;
+        }
     }
 
     @Override

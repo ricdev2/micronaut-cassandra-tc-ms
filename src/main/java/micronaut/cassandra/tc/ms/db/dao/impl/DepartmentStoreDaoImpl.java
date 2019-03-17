@@ -34,16 +34,10 @@ public class DepartmentStoreDaoImpl extends
     private static final String STM_FIND_ALL =
                             "select * from stores_ny_keyspace.department_store";
 
-    /** Query statement that returns a register search by id. */
-    //private static final String STM_FIND_BY_ID = "select * from where ";
-
     /** Prepare statement for all results. */
     private PreparedStatement prepStmFindAll =
                                     getSession().prepare(STM_FIND_ALL);
 
-    /** Prepare statement for find by id. */
-    //private PreparedStatement prepStmFindById =
-    //                                getSession().prepare(STM_FIND_BY_ID);
 
     /** Mapper for DepartmentStore object.*/
     private Mapper<DepartmentStore> mapper;
@@ -64,13 +58,4 @@ public class DepartmentStoreDaoImpl extends
         return mapper.map(rs).all();
     }
 
-    @Override
-    public final DepartmentStore findById(
-            final DepartmentStore.Location location) {
-        //final ResultSet rs = getSession()
-        //        .execute(prepStmFindById.bind(location.getLatitude(),
-        //                                      location.getLongitude()));
-        //return mapper.map(rs).one();
-        return null;
-    }
 }

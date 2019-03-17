@@ -4,12 +4,14 @@ micronaut:
         name: micronaut-cassandra-tc-ms
     server:
         port: 8086
+        cors:
+            enabled: true
 
 ---
 cassandra:
     default:
         clusterName: "stores_ny_keyspace"
-        contactPoint: "localhost"
+        contactPoint: "cassandra_db"
         port: 9042
         maxSchemaAgreementWaitSeconds: 70
         ssl: false

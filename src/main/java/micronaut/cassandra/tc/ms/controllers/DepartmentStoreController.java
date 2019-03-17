@@ -10,11 +10,11 @@ import java.util.List;
 import javax.inject.Inject;
 
 import io.micronaut.http.MediaType;
+import io.micronaut.http.annotation.Consumes;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Produces;
 
-import io.micronaut.validation.Validated;
 import micronaut.cassandra.tc.ms.db.dao.CassandraDao;
 import micronaut.cassandra.tc.ms.models.DepartmentStore;
 
@@ -26,9 +26,9 @@ import micronaut.cassandra.tc.ms.models.DepartmentStore;
  * @version 1.0.0
  * @since 1.0.0
  */
-@Validated
 @Controller("/department-store")
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class DepartmentStoreController {
 
     /** A reference to Cassandra Dao.*/
@@ -58,6 +58,4 @@ public class DepartmentStoreController {
     public List<DepartmentStore> getAll() {
         return cassandraDao.findAll();
     }
-
-
 }
