@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  micronaut_depts_api:
+    container_name: micronaut_depts_api
+    build: .
+    image: micronaut-cassandra-tc-ms-img
+    ports:
+      - "8086:8086"
+    depends_on:
+      - cassandra_db
+    networks:
+        - micronaut-network
+
+  cassandra_db:
+    container_name: cassandra_db
+    image: cassandra:3.11.3
+    volumes:
+      - ./scripts/cassandra/ddl.cql:/ddl.cql
+      - ./scripts/cassandra/dump.cql:/dump.cql
+    ports:
+      - "7000:7000"
+      - "9042:9042"
+    networks:
+      - micronaut-network
+
+networks:
+  micronaut-network:
+    external:
+      name: micronaut-network

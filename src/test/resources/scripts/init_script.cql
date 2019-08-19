@@ -1,0 +1,4 @@
+create keyspace if not exists stores_ny_keyspace with replication = { 'class': 'SimpleStrategy', 'replication_factor': 1};
+create type stores_ny_keyspace.comment(comment_text  text,stars int);
+create table stores_ny_keyspace.department_store(latitude double, longitude double,address text,name text,telephone text, previews list<text>, rank float, comments list<frozen<comment>>, primary key ( (latitude, longitude), address)) with clustering order by (address asc );
+insert into stores_ny_keyspace.department_store ("latitude", "longitude", "address","comments", "name","previews", "rank", "telephone") values (40.764717, -73.971224, '660 Madison Ave, New York, NY 10065, EE. UU', [{ comment_text : 'Good', stars: 2}], 'Barneys New York, Madison', ['http:'], 5, '+1 212-826-8900');
